@@ -54,3 +54,23 @@
         </div>
         <!-- Health Sources section  -->
         <hr />
+        <div class="source_section">
+            <h3 id="health" class="source_section_name">Health News</h3>
+            <ul>
+                <div class="row">
+                    {{ macro.displayNewsList(health) }}
+                </div>
+            </ul>
+        </div>
+        <!-- Sports Sources section  -->
+        <hr />
+        <div class="source_section">
+            <h3 id="sports" class="source_section_name">Sports News</h3>
+            <ul>
+                <div class="row">
+                    {{ macro.displayNewsList(sports) }}
+                </div>
+            </ul>
+        </div>
+    </div>
+    {% endblock%}

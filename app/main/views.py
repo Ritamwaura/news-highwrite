@@ -5,3 +5,4 @@ from ..models import news_Article
 # Views
 @main.route('/')
 def index():
+    

@@ -20,7 +20,7 @@ def index():
     title = 'The best news Highlits In The World'
     
     search_news_source = request.args.get('news_query')
-   if search_news_source:
+    if search_news_source:
        return redirect(url_for('main.index',news_name = search_news_source))
     else:
         return render_template('index.html',title = title,general = general ,business = business, technology = technology,health=health,science=science,sports=sports)

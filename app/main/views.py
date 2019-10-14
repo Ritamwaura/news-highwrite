@@ -34,3 +34,5 @@ def source(id):
     title = f'{newsid}'
     details = id.capitalize()
     content = f'{details}'
+    # articles = news_source.get_news_source(source.id)
+    return render_template('news_source.html',  title = title, id = newsid ,source = source ,content = content)

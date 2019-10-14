@@ -12,3 +12,8 @@ class news_Source:
         self.publishedAt = publishedAt
         self.content = content
 
+class news_Article:
+    '''
+    news_Article class to define news_Article Objects
+    
+    '''

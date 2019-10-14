@@ -24,3 +24,13 @@ def index():
        return redirect(url_for('main.index',news_name = search_news_source))
     else:
         return render_template('index.html',title = title,general = general ,business = business, technology = technology,health=health,science=science,sports=sports)
+@main.route('/source/<id>')
+def source(id):
+    '''
+    View root page function theat returns the index pages and its  data 
+    '''
+    source = get_news_source(id)
+    newsid = id.capitalize()
+    title = f'{newsid}'
+    details = id.capitalize()
+    content = f'{details}'

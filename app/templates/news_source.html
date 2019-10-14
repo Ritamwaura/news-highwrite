@@ -2,3 +2,22 @@
 
 <link rel="stylesheet" href="{{url_for('static',filename='CSS/index.css')}}">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Black+Ops+One"> {% endblock %}
+<!-- Content block -->
+{% block content %}
+<div class="container">
+
+    <!--  -->
+    <div class="row">
+        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+            <h3>{{source.title}}</h3>
+        </div>
+    </div>
+</div>
+<div class="container jumbotron">
+    <div class="row">
+        <div>
+            {{ macro.displayArticlesList(articles) }}
+        </div>
+    </div>
+</div>
+{% endblock %}

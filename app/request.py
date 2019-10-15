@@ -28,12 +28,12 @@ def get_news_sources(category):
         if get_news_source_response['sources']:
             news_source_results_list = get_news_source_response['sources']
             news_source_results = process_results(news_source_results_list)
- return news_source_results
-def get_news_source(source):
+    return news_source_results
+def get_news_source():
     '''
     Function that gets the json responce to our url request
     '''
-    get_news_source_url = base_url.format(source,api_key)
+    get_news_source_url = base_url.format(base_url,api_key)
 
     with urllib.request.urlopen(get_news_source_url) as url:
         get_news_source_data = url.read()
@@ -61,15 +61,14 @@ def process_results(news_source_results):
     
     for news_source_item in news_sources_results:
         id = news_source_item.get('id')
-        author = news_source_item.get('author')
-        title = news_source_item.get('title')
+        name = news_source_item.get('name')
         description = news_source_item.get('description')
         url = news_source_item.get('url')
-        urlToImage = news_source_item.get('urlToImage')
-        publishedAt = news_source_item.get('publishedAt')
-        content = news_source_item.get('content')
-
-        news_source_object = news_Source(id,author,title,description,url,urlToImage,publishedAt,content)
-        news_sources_results.append(news_source_object)
+        language = news_source_item.get('language')
+        category = news_source_item.get('category')
+        
+        if language == 'en':
+            news_source_object = news_Source(id,name,description,url,language,category)
+            news_sources_results.append(news_source_object)
 
     return news_source_results
